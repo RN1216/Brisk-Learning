@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import loogo from '../../../image2vector.svg'
 
 const Header = () => {
@@ -24,7 +25,9 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Home</Nav.Link>
+            <Nav.Link to='/'>
+                Home 
+                </Nav.Link>
             
             <NavDropdown title="Courses" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">BSc Courses</NavDropdown.Item>

@@ -15,7 +15,7 @@ const Main = () => {
                 </Col>
                 
                 <Col lg='8'>
-                <h1>middle</h1>
+                
                 <Outlet></Outlet>
                 </Col>
 
