@@ -1,15 +1,15 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CoursesDetails from '../CoursesDetails/CoursesDetails/CoursesDetails';
-import  CardGroup  from 'react-bootstrap/CardGroup';
+
 
 const Home = () => {
     const allCoursesDetail = useLoaderData();
     return (
-        <div className='d-inline-block'>
+        <div >
           
            {
-                allCoursesDetail.map(coursesdetail =><CoursesDetails 
+                allCoursesDetail.map(coursesdetail => <CoursesDetails 
                 key={coursesdetail._id}
                 coursesdetail={coursesdetail}>
                 </CoursesDetails>)
