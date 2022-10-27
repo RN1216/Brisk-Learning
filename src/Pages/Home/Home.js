@@ -6,7 +6,7 @@ import CoursesDetails from '../CoursesDetails/CoursesDetails/CoursesDetails';
 const Home = () => {
     const allCoursesDetail = useLoaderData();
     return (
-        <div >
+        <div className='d-flex flex-wrap order-lg-1'>
           
            {
                 allCoursesDetail.map(coursesdetail => <CoursesDetails 

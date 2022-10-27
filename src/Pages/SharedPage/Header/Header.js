@@ -59,7 +59,7 @@ const Header = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link ><Link className="text-decoration-none text-dark" to='/blog'>Blog</Link></Nav.Link>
-            <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Nav.Link ><Link className="text-decoration-none text-dark" to='/faq'>FAQ</Link></Nav.Link>
             <Button variant="outline-dark" id={theme}>Theme Change</Button>
           </Nav>
           <Nav>
