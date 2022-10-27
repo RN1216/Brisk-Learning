@@ -7,7 +7,7 @@ const LeftNav = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/brisk-courses")
+    fetch("https://brisk-learning-server-site.vercel.app/brisk-courses")
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);

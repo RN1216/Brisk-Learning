@@ -18,18 +18,18 @@ export const routes =createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch('http://localhost:5000/coursesdetail')
+                loader:()=>fetch('https://brisk-learning-server-site.vercel.app/coursesdetail')
             },
             {
                 path:'/courses/:id',
                 element:<Courses></Courses>,
-                loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`)
+                loader:({params})=>fetch(`https://brisk-learning-server-site.vercel.app/category/${params.id}`)
 
             },
             {
                 path:'/coursesdetail/:id',
                 element:<CoursesDetails></CoursesDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/coursesdetail/${params.id}`)
+                loader:({params})=>fetch(`https://brisk-learning-server-site.vercel.app/coursesdetail/${params.id}`)
 
             },
             {
