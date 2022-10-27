@@ -12,7 +12,7 @@ import  NavDropdown  from 'react-bootstrap/NavDropdown';
 
 
 const Register = () => {
-    const {createUser,providerLogin} = useContext(AuthContext);
+    const {createUser,providerLogin ,updateUserProfile} = useContext(AuthContext);
 
     const googleProvider =new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -54,6 +54,7 @@ const Register = () => {
              setSuccess(true);
              navigate('/');
              form.reset();
+             handleUpdateUserProfile(name,photoURL)
          })
          .catch(error=>{
            console.error(error)
@@ -90,18 +91,27 @@ const Register = () => {
           setError(error.message);
         })
       }
+      const handleUpdateUserProfile=(name,photoURL)=>{
+        const profile = {
+          displayName:name,
+          photoURL:photoURL
+        }
+        updateUserProfile(profile)
+        .then(()=>{})
+        .catch(error=>console.error(error));
+      }
     return (
         <div className='justify-content-btween'>
             <div className='text-center '><h2 className='text-info'>Registration Now</h2></div>
             <Form onSubmit={handleRegisterForm}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className='text-info'>Full Name</Form.Label>
-        <Form.Control name='name' type="text" placeholder="full name"  />
+        <Form.Control name='name' type="text" placeholder="full name" required />
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className='text-info'>Photo URL</Form.Label>
-        <Form.Control name='photoURL' type="text" placeholder="photo url"  />
+        <Form.Control name='photoURL' type="text" placeholder="photo url"  required/>
         
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
