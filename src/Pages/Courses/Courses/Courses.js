@@ -10,12 +10,14 @@ const Courses = () => {
     return (
         <div>
             <h2>Some Courses is here :{similerCourses.length}</h2>
-            {
+          <div className='mb-5'>
+          {
                 similerCourses.map(courses=><EachCourseDetail
                 key={courses._id}
                 courses ={courses}
                 ></EachCourseDetail>)
             }
+          </div>
         </div>
     );
 };
