@@ -9,6 +9,7 @@ import Login from "../../Pages/Login/Login";
 import Courses from './../../Pages/Courses/Courses/Courses';
 import FAQ from './../../Pages/FAQ/FAQ';
 import Register from './../../Pages/Register/Register';
+import PrivateRoute from './../PrivateRoute/PrivateRoute';
 
 
 export const routes =createBrowserRouter([
@@ -23,13 +24,13 @@ export const routes =createBrowserRouter([
             },
             {
                 path:'/courses/:id',
-                element:<Courses></Courses>,
+                element:<PrivateRoute><Courses></Courses></PrivateRoute>,
                 loader:({params})=>fetch(`https://brisk-learning-server-site.vercel.app/category/${params.id}`)
 
             },
             {
                 path:'/coursesdetail/:id',
-                element:<CoursesDetails></CoursesDetails>,
+                element:<PrivateRoute><CoursesDetails></CoursesDetails></PrivateRoute>,
                 loader:({params})=>fetch(`https://brisk-learning-server-site.vercel.app/coursesdetail/${params.id}`)
 
             },
@@ -42,12 +43,12 @@ export const routes =createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'/',
+                path:'/faq',
                 element:<FAQ></FAQ>
             },
             {
                 path:'/blog',
-                element:<Blog></Blog>
+                element:<PrivateRoute><Blog></Blog></PrivateRoute>
             },
             {
                 path:'*',

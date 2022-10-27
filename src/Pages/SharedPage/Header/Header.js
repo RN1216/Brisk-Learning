@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Image } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -12,7 +12,7 @@ import { AuthContext } from "./../../../context/AuthProvider";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const [theme,setTheme]= useState()
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -60,6 +60,7 @@ const Header = () => {
             </NavDropdown>
             <Nav.Link ><Link className="text-decoration-none text-dark" to='/blog'>Blog</Link></Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
+            <Button variant="outline-dark" id={theme}>Theme Change</Button>
           </Nav>
           <Nav>
             <Nav.Link>
@@ -89,7 +90,9 @@ const Header = () => {
                       Registration
                     </Link>
                   </Button>
+
                 </>
+
               )}
             </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
