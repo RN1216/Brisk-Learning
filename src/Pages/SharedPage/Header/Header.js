@@ -44,21 +44,21 @@ const Header = () => {
               <Link className="text-decoration-none text-dark" to='/'>Home</Link></Nav.Link>
 
             <NavDropdown title="Courses" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                BSc Courses
+              <NavDropdown.Item >
+              <Link className="text-decoration-none text-dark" to='/'>BSc Courses</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Msc Courses
+              <NavDropdown.Item >
+              <Link className="text-decoration-none text-dark" to='/'>Msc Courses</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                PHD Courses
+              <NavDropdown.Item >
+              <Link className="text-decoration-none text-dark" to='/'>PHD Courses</Link>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Orther Courses
+              <NavDropdown.Item >
+                <Link className="text-decoration-none text-dark" to='/'>Orther Courses</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
+            <Nav.Link ><Link className="text-decoration-none text-dark" to='/blog'>Blog</Link></Nav.Link>
             <Nav.Link href="#pricing">FAQ</Nav.Link>
           </Nav>
           <Nav>
@@ -66,14 +66,14 @@ const Header = () => {
               {user?.uid ? (
                 <>
                   <span className="mx-2"> {user?.displayName} </span>
-                  <Button onClick={handleLogOut} variant="outline-secondary">
+                  <Button onClick={handleLogOut} variant="outline-dark">
                     {" "}
                     Log Out
                   </Button>
                 </>
               ) : (
                 <>
-                  <Button variant="secondary mx-1">
+                  <Button variant="outline-dark mx-1">
                     <Link
                       className="text-decoration-none text-light"
                       to="/login"
@@ -81,7 +81,7 @@ const Header = () => {
                       Login
                     </Link>
                   </Button>
-                  <Button variant="secondary mx-1">
+                  <Button variant="outline-dark mx-1">
                     <Link
                       className="text-decoration-none text-light"
                       to="/registration"
