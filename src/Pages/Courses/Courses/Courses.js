@@ -10,7 +10,7 @@ const Courses = () => {
     return (
         <div>
             <h2>Some Courses is here :{similerCourses.length}</h2>
-          <div className='mb-5'>
+          <div className='mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           {
                 similerCourses.map(courses=><EachCourseDetail
                 key={courses._id}
